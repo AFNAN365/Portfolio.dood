@@ -17,35 +17,19 @@ const skills = ['Python', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML'
 export default function Home() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
-
   return (
     <main>
-      <nav className="nav">
-        <a href="#top" className="brand" onClick={close}><span>HN</span> Has Nain</a>
-        <div className={`navLinks ${open ? 'show' : ''}`}>
-          <a href="#about" onClick={close}>About</a><a href="#skills" onClick={close}>Skills</a><a href="#projects" onClick={close}>Projects</a><a href="#contact" onClick={close}>Contact</a>
-        </div>
-        <a className="navCta" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={17}/> GitHub</a>
-        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X/> : <Menu/>}</button>
-      </nav>
+      <nav className="nav"><a href="#top" className="brand" onClick={close}><span>MA</span> Muhammad Afnan</a><div className={`navLinks ${open ? 'show' : ''}`}><a href="#about" onClick={close}>About</a><a href="#skills" onClick={close}>Skills</a><a href="#projects" onClick={close}>Projects</a><a href="#contact" onClick={close}>Contact</a></div><a className="navCta" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={17}/> GitHub</a><button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X/> : <Menu/>}</button></nav>
 
-      <section id="top" className="hero wrap">
-        <div className="heroCopy">
-          <div className="eyebrow"><span className="pulse"/> Available for internships & freelance work</div>
-          <h1>Full Stack <em>&</em><br/><span>AI Developer.</span></h1>
-          <p className="lead">I build modern web products, AI-powered tools and automation systems that turn ideas into useful, real-world experiences.</p>
-          <div className="actions"><a className="primary" href="#projects">View my work <ArrowUpRight size={18}/></a><a className="secondary" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a></div>
-          <div className="stats"><div><strong>Full Stack</strong><span>Development</span></div><div><strong>AI + Agents</strong><span>Intelligent systems</span></div><div><strong>GIAIC</strong><span>Student / Developer</span></div></div>
-        </div>
-        <div className="heroVisual" aria-label="Developer profile visual"><div className="orb orb1"/><div className="orb orb2"/><div className="codeCard"><div className="dots"><i/><i/><i/></div><pre>{`const developer = {
+      <section id="top" className="hero wrap"><div className="heroCopy"><div className="eyebrow"><span className="pulse"/> Available for internships & freelance work</div><h1>Hi, I&apos;m <span>Muhammad Afnan.</span><br/><em>Full Stack & AI Developer.</em></h1><p className="lead">I build modern web products, AI-powered tools, intelligent agents and automation systems that turn ideas into useful, real-world experiences.</p><div className="actions"><a className="primary" href="#projects">View my work <ArrowUpRight size={18}/></a><a className="secondary" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a></div><div className="stats"><div><strong>Full Stack</strong><span>Development</span></div><div><strong>AI + Agents</strong><span>Intelligent systems</span></div><div><strong>GIAIC</strong><span>Student / Developer</span></div></div></div><div className="heroVisual" aria-label="Developer profile visual"><div className="orb orb1"/><div className="orb orb2"/><div className="codeCard"><div className="dots"><i/><i/><i/></div><pre>{`const developer = {
+  name: "Muhammad Afnan",
   role: "Full Stack + AI",
   stack: ["Next.js", "Python"],
   focus: "AI Agents",
   mindset: "Build. Learn. Ship."
-}`}</pre><div className="codeFooter"><Code2 size={15}/> building useful things</div></div></div>
-      </section>
+}`}</pre><div className="codeFooter"><Code2 size={15}/> building useful things</div></div></div></section>
 
-      <section id="about" className="section wrap about"><div className="sectionHead"><span>01 / ABOUT</span><h2>Building with purpose,<br/><span>learning by shipping.</span></h2></div><div className="aboutGrid"><p>I am a full stack developer and GIAIC student focused on web development, AI engineering and agentic systems. I enjoy taking a problem from an idea to a working interface, backend and intelligent workflow.</p><p>My projects explore education technology, AI assistants, automation, interactive experiences and product-focused web applications. I care about clean UI, practical functionality and continuous improvement.</p></div></section>
+      <section id="about" className="section wrap about"><div className="sectionHead"><span>01 / ABOUT</span><h2>Building with purpose,<br/><span>learning by shipping.</span></h2></div><div className="aboutGrid"><p>I&apos;m Muhammad Afnan, a full stack developer and GIAIC student focused on web development, AI engineering and agentic systems. I enjoy taking a problem from an idea to a working interface, backend and intelligent workflow.</p><p>My projects explore education technology, AI assistants, automation, interactive experiences and product-focused web applications. I care about clean UI, practical functionality and continuous improvement.</p></div></section>
 
       <section id="skills" className="section wrap"><div className="sectionHead"><span>02 / TOOLKIT</span><h2>Technologies I<br/><span>work with.</span></h2></div><div className="skillGrid">{skills.map(skill => <div className="skill" key={skill}><Code2 size={16}/>{skill}</div>)}</div></section>
 
@@ -54,8 +38,7 @@ export default function Home() {
       <section className="banner wrap"><div><span>LET&apos;S BUILD</span><h2>Have an idea worth<br/><em>shipping?</em></h2></div><a href="#contact" className="primary">Start a conversation <ArrowUpRight size={18}/></a></section>
 
       <section id="contact" className="section wrap contact"><div className="sectionHead"><span>04 / CONTACT</span><h2>Let&apos;s connect.</h2></div><div className="contactBox"><div><p>For internships, development opportunities, AI projects or collaboration, reach out through GitHub.</p><a className="contactLink" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={20}/> github.com/AFNAN365 <ArrowUpRight size={17}/></a></div><a className="mailBtn" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Mail size={19}/> Contact on GitHub</a></div></section>
-
-      <footer className="footer wrap"><span>© 2026 Has Nain</span><span>Full Stack · AI · Agentic Systems</span><a href="#top">Back to top ↑</a></footer>
+      <footer className="footer wrap"><span>© 2026 Muhammad Afnan</span><span>Full Stack · AI · Agentic Systems</span><a href="#top">Back to top ↑</a></footer>
     </main>
   )
 }

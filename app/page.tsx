@@ -1,29 +1,61 @@
-import { ArrowUpRight, Bot, Code2, Database, Globe2, Mail, MessageCircle, Sparkles, Terminal, Workflow, Github, Linkedin } from "lucide-react";
+'use client'
 
-const skills = [
-  { title: "Frontend", desc: "React, Next.js, TypeScript, responsive UI", Icon: Code2 },
-  { title: "Backend", desc: "APIs, FastAPI, Node.js, authentication", Icon: Terminal },
-  { title: "AI & Agents", desc: "AI chatbots, agent workflows, integrations", Icon: Bot },
-  { title: "Data & Cloud", desc: "SQL, Redis, Docker, deployment", Icon: Database },
-  { title: "Automation", desc: "WhatsApp, Telegram & workflow automation", Icon: Workflow },
-  { title: "Product Design", desc: "Clean UX, dashboards & modern interfaces", Icon: Globe2 },
-];
+import { useState } from 'react'
+import { ArrowUpRight, Bot, BrainCircuit, Code2, Github, Globe2, Layers3, Mail, Menu, Sparkles, X, Zap } from 'lucide-react'
 
 const projects = [
-  { name: "AI Quiz Master", type: "AI Learning Platform", desc: "A professional exam and learning experience with chapter-based quizzes, timed attempts and results." },
-  { name: "PCAO-F Roadmap", type: "Learning & Career Platform", desc: "A structured learning roadmap connecting foundation learning, milestones and career growth." },
-  { name: "AI Agent Systems", type: "AI Automation", desc: "Custom AI-agent concepts designed to route tasks, integrate tools and automate workflows." },
-];
+  { title: 'AI Quiz Master', description: 'AI-focused learning and assessment platform with chapter exams, timers, scoring, progress tracking and certificate-oriented flows.', tags: ['Next.js', 'TypeScript', 'AI', 'Education'], icon: BrainCircuit },
+  { title: 'Dood / dood.ai', description: 'AI assistant and agent concepts focused on useful automation, intelligent responses and production-ready AI workflows.', tags: ['AI Agents', 'Python', 'APIs', 'Automation'], icon: Bot },
+  { title: 'PCAO-F Roadmap', description: 'Structured learning and career roadmap experience built around milestones, shared foundations and student progression.', tags: ['Web App', 'UX', 'Roadmap', 'Learning'], icon: Layers3 },
+  { title: 'Student Utility Platform', description: 'Student-focused platform concept combining learning resources, authentication, utilities and an admin analytics experience.', tags: ['Full Stack', 'Dashboard', 'Auth', 'Education'], icon: Globe2 },
+  { title: 'Hand Jutsu Studio', description: 'Interactive browser experience for gesture-inspired visual effects, controls and customizable visual modes.', tags: ['JavaScript', 'Interactive UI', 'Effects'], icon: Sparkles },
+  { title: 'AI Model Router', description: 'Smart routing concept designed to evaluate a request and select the most suitable AI capability instead of using one model for everything.', tags: ['AI Routing', 'Agents', 'LLM Systems'], icon: Zap },
+]
+
+const skills = ['Python', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'HTML', 'CSS', 'FastAPI', 'Git', 'AI/ML', 'AI Agents', 'Automation']
 
 export default function Home() {
-  return <main>
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/45 backdrop-blur-xl"><div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"><a href="#" className="text-lg font-bold">HN<span className="text-white/40">.</span></a><nav className="hidden gap-7 text-sm text-white/65 md:flex"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a></nav><a href="#contact" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black">Let's Talk</a></div></header>
-    <section className="grid-bg relative overflow-hidden pt-36 pb-24"><div className="mx-auto max-w-6xl px-5"><div className="mb-7 inline-flex items-center gap-2 rounded-full pill px-4 py-2 text-xs text-white/70"><span className="h-2 w-2 rounded-full bg-emerald-400"/> Available for AI & development projects</div><h1 className="max-w-5xl text-5xl font-black leading-[.98] tracking-[-.04em] sm:text-7xl lg:text-8xl">Full Stack <span className="gradient-text">Developer</span><br/>building with AI.</h1><p className="mt-7 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">I’m Has Nain — a GIAIC student and developer focused on building modern websites, intelligent AI solutions, automation systems and practical digital products.</p><div className="mt-9 flex flex-wrap gap-3"><a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-black">View Projects <ArrowUpRight size={17}/></a><a href="#contact" className="inline-flex items-center gap-2 rounded-full pill px-5 py-3 text-sm font-semibold">Start a Project</a></div></div></section>
-    <section id="about" className="mx-auto max-w-6xl px-5 py-24"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">01 / About</p><h2 className="mt-4 text-4xl font-bold">Turning ideas into <span className="gradient-text">working products.</span></h2><p className="mt-6 max-w-3xl leading-8 text-white/60">I enjoy taking an idea from a rough concept to a polished digital experience. My focus is full-stack development combined with AI, automation and clean product design.</p></section>
-    <section id="skills" className="border-y border-white/10 bg-white/[.018] py-24"><div className="mx-auto max-w-6xl px-5"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">02 / Capabilities</p><h2 className="mt-4 text-4xl font-bold">Technical toolkit</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{skills.map(({ title, desc, Icon })=><div className="card rounded-3xl p-6" key={title}><Icon size={24}/><h3 className="mt-6 text-xl font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-white/45">{desc}</p></div>)}</div></div></section>
-    <section id="projects" className="mx-auto max-w-6xl px-5 py-24"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">03 / Selected work</p><h2 className="mt-4 text-4xl font-bold">Projects with purpose.</h2><div className="mt-10 grid gap-5 lg:grid-cols-3">{projects.map(({ name, type, desc },i)=><article className="card rounded-3xl p-6" key={name}><span className="text-xs text-white/35">0{i+1}</span><div className="mt-14 grid h-24 place-items-center rounded-2xl bg-white/[.035]"><Sparkles className="text-white/30"/></div><p className="mt-6 text-xs uppercase tracking-widest text-white/35">{type}</p><h3 className="mt-2 text-2xl font-bold">{name}</h3><p className="mt-3 text-sm leading-6 text-white/50">{desc}</p></article>)}</div></section>
-    <section id="services" className="border-y border-white/10 bg-white/[.018] py-24"><div className="mx-auto max-w-6xl px-5"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">04 / Services</p><h2 className="mt-4 text-4xl font-bold">What I can build for you.</h2><div className="mt-10 grid gap-3 md:grid-cols-2">{['Modern business websites','AI chatbots & AI agents','Custom dashboards & web apps','WhatsApp / Telegram automation','AI API integration','Custom automation workflows','Landing pages & portfolio websites','Database & backend APIs'].map(x=><div key={x} className="flex items-center gap-3 rounded-2xl border border-white/10 p-5 text-white/70"><span className="grid h-7 w-7 place-items-center rounded-full bg-white text-black">✓</span>{x}</div>)}</div></div></section>
-    <section id="contact" className="mx-auto max-w-6xl px-5 py-28"><div className="rounded-[2rem] border border-white/10 bg-white/[.035] p-8 text-center sm:p-14"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">05 / Contact</p><h2 className="mt-5 text-4xl font-black sm:text-6xl">Have an idea?<br/><span className="gradient-text">Let’s build it.</span></h2><p className="mx-auto mt-5 max-w-xl text-white/50">Tell me what you want to build and I’ll help turn the idea into a practical digital product.</p><div className="mt-8 flex justify-center gap-3"><a className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-black" href="mailto:YOUR_EMAIL@example.com"><Mail size={17}/> Email Me</a><a className="inline-flex items-center gap-2 rounded-full pill px-5 py-3 text-sm font-semibold" href="https://wa.me/YOUR_NUMBER"><MessageCircle size={17}/> WhatsApp</a></div><div className="mt-8 flex justify-center gap-5 text-white/40"><a href="https://github.com/AFNAN365"><Github/></a><a href="https://linkedin.com/"><Linkedin/></a></div></div></section>
-    <footer className="border-t border-white/10 py-8 text-center text-xs text-white/30">© 2026 Has Nain. Built with Next.js & TypeScript.</footer>
-  </main>;
+  const [open, setOpen] = useState(false)
+  const close = () => setOpen(false)
+
+  return (
+    <main>
+      <nav className="nav">
+        <a href="#top" className="brand" onClick={close}><span>HN</span> Has Nain</a>
+        <div className={`navLinks ${open ? 'show' : ''}`}>
+          <a href="#about" onClick={close}>About</a><a href="#skills" onClick={close}>Skills</a><a href="#projects" onClick={close}>Projects</a><a href="#contact" onClick={close}>Contact</a>
+        </div>
+        <a className="navCta" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={17}/> GitHub</a>
+        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X/> : <Menu/>}</button>
+      </nav>
+
+      <section id="top" className="hero wrap">
+        <div className="heroCopy">
+          <div className="eyebrow"><span className="pulse"/> Available for internships & freelance work</div>
+          <h1>Full Stack <em>&</em><br/><span>AI Developer.</span></h1>
+          <p className="lead">I build modern web products, AI-powered tools and automation systems that turn ideas into useful, real-world experiences.</p>
+          <div className="actions"><a className="primary" href="#projects">View my work <ArrowUpRight size={18}/></a><a className="secondary" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a></div>
+          <div className="stats"><div><strong>Full Stack</strong><span>Development</span></div><div><strong>AI + Agents</strong><span>Intelligent systems</span></div><div><strong>GIAIC</strong><span>Student / Developer</span></div></div>
+        </div>
+        <div className="heroVisual" aria-label="Developer profile visual"><div className="orb orb1"/><div className="orb orb2"/><div className="codeCard"><div className="dots"><i/><i/><i/></div><pre>{`const developer = {
+  role: "Full Stack + AI",
+  stack: ["Next.js", "Python"],
+  focus: "AI Agents",
+  mindset: "Build. Learn. Ship."
+}`}</pre><div className="codeFooter"><Code2 size={15}/> building useful things</div></div></div>
+      </section>
+
+      <section id="about" className="section wrap about"><div className="sectionHead"><span>01 / ABOUT</span><h2>Building with purpose,<br/><span>learning by shipping.</span></h2></div><div className="aboutGrid"><p>I am a full stack developer and GIAIC student focused on web development, AI engineering and agentic systems. I enjoy taking a problem from an idea to a working interface, backend and intelligent workflow.</p><p>My projects explore education technology, AI assistants, automation, interactive experiences and product-focused web applications. I care about clean UI, practical functionality and continuous improvement.</p></div></section>
+
+      <section id="skills" className="section wrap"><div className="sectionHead"><span>02 / TOOLKIT</span><h2>Technologies I<br/><span>work with.</span></h2></div><div className="skillGrid">{skills.map(skill => <div className="skill" key={skill}><Code2 size={16}/>{skill}</div>)}</div></section>
+
+      <section id="projects" className="section wrap projects"><div className="sectionHead row"><div><span>03 / SELECTED WORK</span><h2>Projects that<br/><span>show the range.</span></h2></div><p>From AI systems to student platforms and interactive web experiences.</p></div><div className="projectGrid">{projects.map(({ title, description, tags, icon: Icon }, index) => <article className="project" key={title}><div className="projectTop"><span>0{index + 1}</span><Icon size={25}/></div><h3>{title}</h3><p>{description}</p><div className="tags">{tags.map(tag => <span key={tag}>{tag}</span>)}</div></article>)}</div></section>
+
+      <section className="banner wrap"><div><span>LET&apos;S BUILD</span><h2>Have an idea worth<br/><em>shipping?</em></h2></div><a href="#contact" className="primary">Start a conversation <ArrowUpRight size={18}/></a></section>
+
+      <section id="contact" className="section wrap contact"><div className="sectionHead"><span>04 / CONTACT</span><h2>Let&apos;s connect.</h2></div><div className="contactBox"><div><p>For internships, development opportunities, AI projects or collaboration, reach out through GitHub.</p><a className="contactLink" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Github size={20}/> github.com/AFNAN365 <ArrowUpRight size={17}/></a></div><a className="mailBtn" href="https://github.com/AFNAN365" target="_blank" rel="noreferrer"><Mail size={19}/> Contact on GitHub</a></div></section>
+
+      <footer className="footer wrap"><span>© 2026 Has Nain</span><span>Full Stack · AI · Agentic Systems</span><a href="#top">Back to top ↑</a></footer>
+    </main>
+  )
 }
